@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #007bff, #33ccff); /* Nền gradient */
+        }
+
+        .login-container {
+            background: #fff;
+            width: 350px;
+            padding: 20px 30px;
+            border-radius: 15px; /* Bo góc */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+            text-align: center;
+        }
+
+        .login-container h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0056b3; /* Màu chữ */
+            margin-bottom: 20px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .password-container input {
+            padding-right: 40px; /* Để chừa chỗ cho biểu tượng */
+        }
+
+        .password-container .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #777;
+        }
+
+        .login-container button {
+            background: #007bff;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .login-container button:hover {
+            background: #0056b3; /* Đổi màu khi hover */
+        }
+
+        .login-container .links {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .login-container .links a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .login-container .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Sign In</h1>
+        <input type="text" placeholder="Username">
+        <div class="password-container">
+            <input type="password" placeholder="Password">
+            <span class="toggle-password">&#128065;</span> <!-- Biểu tượng mắt -->
+        </div>
+        <button>Login</button>
+        <div class="links">
+            <a href="#">Forgot Password?</a><br>
+            <a href="#">Create an Account?</a>
+        </div>
+    </div>
+
+    <script>
+        // Tính năng toggle hiển thị mật khẩu
+        const togglePassword = document.querySelector('.toggle-password');
+        const passwordInput = document.querySelector('.password-container input');
+
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+            togglePassword.textContent = passwordInput.type === 'password' ? '👁️' : '🙈';
+        });
+    </script>
+</body>
+</html>
